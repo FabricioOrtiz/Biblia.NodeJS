@@ -14,8 +14,15 @@ const main = async() => {
         //consultar sobre opcion de menu
         option = await inquirerMenu();    
 
-        switch (option) {
+        switch (parseInt(option)) {
             case 1:
+                
+                const lugar = await leerInput('ciudad: ');
+
+                await busquedas.ciudad(lugar);
+                
+                console.log('\nInformacion de la ciudad\n'.green);
+                console.log('Ciudad: ' + lugar);
                 
                 break;
         
