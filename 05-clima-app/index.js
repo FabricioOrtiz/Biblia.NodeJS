@@ -1,15 +1,18 @@
 
 const {
     leerInput,
-    inquirerMenu} = require('./helpers/inquirer')
+    inquirerMenu, pausa} = require('./helpers/inquirer');
+const Busquedas = require('./models/busquedas');
+
+//const Busquedas = require('./models/busquedas');
 
 const main = async() => {
-    //Saludar al usuario
-    console.log("Garming Weather API");
+    const busquedas = new Busquedas();
+    let option;
 
     do {
         //consultar sobre opcion de menu
-        let option = await inquirerMenu();    
+        option = await inquirerMenu();    
 
         switch (option) {
             case 1:
@@ -19,8 +22,7 @@ const main = async() => {
             default:
                 break;
         }
-        if(option !== 0)
-            await pausa();
+        if(option !== 0) await pausa();
 
     } while (option != 0);
 }
