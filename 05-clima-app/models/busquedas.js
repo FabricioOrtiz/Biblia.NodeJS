@@ -9,10 +9,22 @@ class Busquedas {
 
     async ciudad (lugar = ''){
         //peticion http
-        const resp = await axios.get('https://reqres.in/api/users?delay=3')
-        console.log('ciudad',lugar);
+        //const resp = await axios.get('https://reqres.in/api/users?delay=3');
+        
+        const instace = axios.create({
+            baseURL: 'https://reqres.in/api/users',
+            params: {
+                'delay':'3'
+            }
+        });
 
-        return []; //retornar los lugares
+        const resp = await instace.get();
+        console.log(resp.data.data);
+        return resp.map(lugar =>({
+            first_name: lugar.first_name,
+            last_name: last_name
+        }));
+    
     }
 }
 module.exports = Busquedas; 

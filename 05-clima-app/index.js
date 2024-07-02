@@ -19,10 +19,10 @@ const main = async() => {
                 
                 const lugar = await leerInput('ciudad: ');
 
-                await busquedas.ciudad(lugar);
+                const lugares =  await busquedas.ciudad(lugar);
                 
                 console.log('\nInformacion de la ciudad\n'.green);
-                console.log('Ciudad: ' + lugar);
+                console.log('lugares: ' + lugares);
                 
                 break;
         
