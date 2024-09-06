@@ -7,6 +7,12 @@ class Busquedas {
         //TODO: leer DB
     }
 
+    get params(){
+        return{
+            
+        }
+    }
+
     async ciudad (lugar = ''){
         //peticion http
         //const resp = await axios.get('https://reqres.in/api/users?delay=3');
